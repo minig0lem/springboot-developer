@@ -1,0 +1,49 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql:true
+    defer-datasource-initialization: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+
+  h2:
+    console:
+      enabled: true
+
+  sql:
+    init:
+      encoding: UTF-8
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates/
+
+  devtools:
+    remote:
+      restart:
+        enabled: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+            scope:
+              - email
+              - profile
+
+jwt:
+  issuer: gmltjd0326@naver.com  #이슈 발급자
+  secret_key: study-springboot  #비밀키
